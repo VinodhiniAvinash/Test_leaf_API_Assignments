@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "46fd18b2-da04-4999-a2fe-df8a6de96ae3",
+		"name": "JIRA_API_Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24450272"
+	},
+	"item": [
+		{
+			"name": "Create_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n    \"project\":\r\n                {\r\n                    \"key\": \"TES\"\r\n                },\r\n    \"summary\": \"create issue in RA project\",\r\n    \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n    \"issuetype\": {\r\n                    \"name\": \"Bug\"\r\n                }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issue/",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issue/TES-1",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"TES-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n\r\n        \"description\": \"Bug creation Using REST API for testing bugs\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issue/TES-1",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"TES-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issue/TES-3",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"TES-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_All_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/search?jql=project= \"TES\"",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project= \"TES\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List_All_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issuetype/",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List_Specific_Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "CrujJd5y9GXKLCLhBlU9F74A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinoavi0527@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vinodhiniapi.atlassian.net/rest/api/2/issuetype/10011",
+					"protocol": "https",
+					"host": [
+						"vinodhiniapi",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype",
+						"10011"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
